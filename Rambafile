@@ -1,0 +1,34 @@
+### Headers settings
+company: Vladimir
+
+### Xcode project settings
+project_name: CountryOfPictures
+xcodeproj_path: CountryOfPictures.xcodeproj
+prefix: CP
+
+### Code generation settings section
+# The main project target name
+project_target: CountryOfPictures
+
+# The file path for new modules
+project_file_path: CountryOfPictures
+
+# The Xcode group path to new modules
+project_group_path: CountryOfPictures
+
+### Tests generation settings section
+# The tests target name
+test_target: CountryOfPicturesTests
+
+# The file path for new tests
+test_file_path: CountryOfPicturesTests
+
+# The Xcode group path to new tests
+test_group_path: CountryOfPicturesTests
+
+### Dependencies settings section
+podfile_path: Podfile
+
+### Templates
+templates:
+- {name: rviper_controller}
