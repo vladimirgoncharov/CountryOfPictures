@@ -1,14 +1,12 @@
 #import "CPImageCollectionCell.h"
 
-#import <PureLayout/PureLayout.h>
+#import <Masonry/Masonry.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <SDWebImage/UIView+WebCache.h>
 
 @interface CPImageCollectionCell()
 
 @property (nonatomic, weak) UIImageView *imageView;
-
-@property (nonatomic, assign) BOOL didSetupConstraints;
 
 @end
 
@@ -40,10 +38,9 @@
 #pragma mark - Layout constraints
 
 - (void)updateConstraints {
-    if (!self.didSetupConstraints) {
-        [self.imageView autoPinEdgesToSuperviewEdges];
-        self.didSetupConstraints = YES;
-    }
+    [self.imageView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self);
+    }];
     [super updateConstraints];
 }
 
@@ -61,7 +58,7 @@
 #pragma mark - Reuse
 
 - (void)prepareForReuse {
-    [self cancelImageLoad];
+    [self.imageView setImage:nil];
     [super prepareForReuse];
 }
 

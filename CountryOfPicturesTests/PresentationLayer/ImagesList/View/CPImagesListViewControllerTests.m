@@ -1,9 +1,8 @@
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
-#import <PromiseKit/PromiseKit.h>
 #import <SVProgressHUD/SVProgressHUD.h>
+#import <Bolts/Bolts.h>
 
-#import "AppDelegate.h"
 #import "CPImagesListViewController.h"
 #import "CPImagesListViewController_Testable.h"
 #import "CPImagesListViewOutput.h"
@@ -27,18 +26,12 @@
     self.mockOutput = OCMProtocolMock(@protocol(CPImagesListViewOutput));
 
     self.controller.output = self.mockOutput;
-    
-    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [delegate.window setRootViewController:self.controller];
 }
 
 - (void)tearDown {
     self.controller = nil;
 
     self.mockOutput = nil;
-    
-    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [delegate.window setRootViewController:nil];
 
     [super tearDown];
 }
@@ -86,7 +79,7 @@
 
 - (void)testReloadImages {
     // given
-    NSMutableArray<CPImage *>* images = [NSMutableArray new];
+    NSMutableArray<id<CPImageExternal> >* images = [NSMutableArray new];
     for (NSInteger i = 0; i < 10; i++) {
         [images addObject:[CPImage new]];
     }
@@ -143,42 +136,6 @@
     });
     [self waitForExpectationsWithTimeout:1.0
                                  handler:nil];
-}
-
-- (void)testShowSomeError {
-    // given
-    NSError *error = [NSError errorWithDomain:NSURLErrorDomain
-                                         code:NSURLErrorUnknown
-                                     userInfo:nil];
-    
-    // when
-    [self.controller loadViewIfNeeded];
-    [self.controller showError:error];
-    
-    // then
-    XCTAssertTrue([self.controller.presentedViewController isMemberOfClass:[UIAlertController class]]);
-}
-
-- (void)testShowCancelledError {
-    // given
-    NSError *error = [NSError cancelledError];
-    
-    // when
-    [self.controller loadViewIfNeeded];
-    [self.controller showError:error];
-    
-    // then
-    XCTAssertNil(self.controller.presentedViewController);
-}
-
-- (void)testDismissPullToRefreshView {
-    // then
-    [self.controller.pullToRefreshView beginRefreshing];
-    XCTAssertTrue(self.controller.pullToRefreshView.isRefreshing);
-
-    [self.controller dismissPullToRefreshView];
-    XCTAssertFalse(self.controller.pullToRefreshView.isRefreshing);
-    
 }
 
 @end

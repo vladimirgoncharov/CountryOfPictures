@@ -73,7 +73,7 @@
 
 - (void)testDidFetchImagesSuccessful {
     // given
-    NSMutableArray<CPImage *>* images = [NSMutableArray new];
+    NSMutableArray<id<CPImageExternal> >* images = [NSMutableArray new];
     for (NSInteger i = 0; i < 10; i++) {
         [images addObject:[CPImage new]];
     }

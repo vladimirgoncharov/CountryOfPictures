@@ -9,7 +9,7 @@
  */
 @interface CPImagesListViewController : UIViewController <CPImagesListViewInput>
 
-@property (nonatomic, strong, readonly) NSArray<CPImage *>* images;
+@property (nonatomic, strong, readonly) NSArray<id<CPImageExternal>>* images;
 @property (nonatomic, strong) id<CPImagesListViewOutput> output;
 
 @end

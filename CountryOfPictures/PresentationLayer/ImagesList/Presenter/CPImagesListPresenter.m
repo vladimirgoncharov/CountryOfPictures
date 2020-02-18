@@ -13,7 +13,7 @@
 #pragma mark - CPImagesListViewOutput
 
 - (void)didTriggerViewReadyEvent {
-	[self.view setupInitialState];
+    [self.view setupInitialState];
     [self loadImages];
 }
 
@@ -23,7 +23,7 @@
 
 #pragma mark - CPImagesListInteractorOutput
 
-- (void)didFetchImagesSuccessful:(NSArray<CPImage *> *)images {
+- (void)didFetchImagesSuccessful:(NSArray<id<CPImageExternal>> *)images {
     [self.view dismissProgressView];
     [self.view dismissPullToRefreshView];
     [self.view reloadImages:images];

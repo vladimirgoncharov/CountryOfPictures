@@ -1,6 +1,6 @@
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
-#import <PromiseKit/PromiseKit.h>
+#import <Bolts/Bolts.h>
 
 #import "CPImagesListInteractor.h"
 #import "CPImage.h"
@@ -47,96 +47,32 @@
 
 - (void)testFetchImagesSuccesful {
     // give
-    AnyPromise *promise = [AnyPromise promiseWithAdapterBlock:^(PMKAdapter  _Nonnull adapter) {
-        NSMutableArray<CPImage *>* images = [NSMutableArray new];
-        for (NSInteger i = 0; i < 10; i++) {
-            [images addObject:[CPImage new]];
-        }
-        adapter([images copy], nil);
-    }];
+    id value = [NSObject new];
+    BFTask *promise = [BFTask taskWithResult:value];
     
     // when
-    OCMExpect([self.mockImagesRepository getImagesListWithCount:51]).andReturn(promise);
+    OCMStub([self.mockImagesRepository getImagesListWithCount:51 cts:OCMOCK_ANY]).andReturn(promise);
     [self.interactor fetchImages];
     
     // then
-    promise.then(^() {
-        OCMVerify([self.mockOutput didFetchImagesSuccessful:promise.value]);
-    });
+    OCMVerify([self.mockOutput didFetchImagesSuccessful:value]);
+    OCMReject([self.mockOutput didFetchImagesFail:OCMOCK_ANY]);
 }
 
 - (void)testFetchImagesFailed {
     // give
-    AnyPromise *promise = [AnyPromise promiseWithAdapterBlock:^(PMKAdapter  _Nonnull adapter) {
-       NSError *error = [NSError errorWithDomain:NSURLErrorDomain
-                                            code:NSURLErrorUnknown
-                                        userInfo:nil];
-        adapter(nil, error);
-    }];
+    NSError *error = [NSError errorWithDomain:NSURLErrorDomain
+                                         code:NSURLErrorUnknown
+                                     userInfo:nil];
+    BFTask *promise = [BFTask taskWithError:error];
     
     // when
-    OCMExpect([self.mockImagesRepository getImagesListWithCount:51]).andReturn(promise);
+    OCMStub([self.mockImagesRepository getImagesListWithCount:51 cts:OCMOCK_ANY]).andReturn(promise);
     [self.interactor fetchImages];
-    
-    // then
-    promise.then(^() {
-        OCMVerify([self.mockOutput didFetchImagesFail:promise.value]);
-    });
-}
 
-- (void)testFetchImagesSuccesfulWhenPromiseIsExist {
-    // give
-    void(^adapterBlock)(PMKAdapter  _Nonnull adapter) = ^void(PMKAdapter  _Nonnull adapter) {
-        NSMutableArray<CPImage *>* images = [NSMutableArray new];
-        for (NSInteger i = 0; i < 10; i++) {
-            [images addObject:[CPImage new]];
-        }
-        adapter([images copy], nil);
-    };
-    AnyPromise *promiseFirst = [AnyPromise promiseWithAdapterBlock:adapterBlock];
-    AnyPromise *promiseLast = [AnyPromise promiseWithAdapterBlock:adapterBlock];
-    
-    // when
-    OCMExpect([self.mockImagesRepository getImagesListWithCount:51]).andReturn(promiseFirst);
-    [self.interactor fetchImages];
-    
-    OCMExpect([self.mockImagesRepository getImagesListWithCount:51]).andReturn(promiseLast);
-    [self.interactor fetchImages];
-    
     // then
-    promiseFirst.then(^() {
-        OCMReject([self.mockOutput didFetchImagesSuccessful:promiseFirst.value]);
-    });
-    promiseLast.then(^() {
-        OCMVerify([self.mockOutput didFetchImagesSuccessful:promiseLast.value]);
-    });
-}
-
-- (void)testFetchImagesFailWhenPromiseIsExist {
-    // give
-    void(^adapterBlock)(PMKAdapter  _Nonnull adapter) = ^void(PMKAdapter  _Nonnull adapter) {
-        NSError *error = [NSError errorWithDomain:NSURLErrorDomain
-                                             code:NSURLErrorUnknown
-                                         userInfo:nil];
-        adapter(nil, error);
-    };
-    AnyPromise *promiseFirst = [AnyPromise promiseWithAdapterBlock:adapterBlock];
-    AnyPromise *promiseLast = [AnyPromise promiseWithAdapterBlock:adapterBlock];
-    
-    // when
-    OCMExpect([self.mockImagesRepository getImagesListWithCount:51]).andReturn(promiseFirst);
-    [self.interactor fetchImages];
-    
-    OCMExpect([self.mockImagesRepository getImagesListWithCount:51]).andReturn(promiseLast);
-    [self.interactor fetchImages];
-    
-    // then
-    promiseFirst.then(^() {
-        OCMReject([self.mockOutput didFetchImagesSuccessful:promiseFirst.value]);
-    });
-    promiseLast.then(^() {
-        OCMVerify([self.mockOutput didFetchImagesSuccessful:promiseLast.value]);
-    });
+    OCMReject([self.mockOutput didFetchImagesSuccessful:OCMOCK_ANY]);
+    OCMVerify([self.mockOutput didFetchImagesFail:error]);
 }
 
 @end

@@ -12,7 +12,7 @@
 
 - (void)testInit {
     // given
-    CPImage *image = [CPImage new];
+    id<CPImageExternal> image = [CPImage new];
 
     // then
     XCTAssertGreaterThan(image.width, 100);
@@ -26,8 +26,8 @@
     // given
     NSUInteger width = 100;
     NSUInteger height = 50;
-    CPImage *image = [[CPImage alloc] initWithWidth:width
-                                             height:height];
+    id<CPImageExternal> image = [[CPImage alloc] initWithWidth:width
+                                                        height:height];
 
     // then
     XCTAssertEqual(image.width,
@@ -35,7 +35,7 @@
     XCTAssertEqual(image.height,
                    height);
     XCTAssertEqualObjects(image.url,
-                          [NSURL URLWithString:[NSString stringWithFormat:@"http://lorempixel.com/100/50/"]]);
+                          [NSURL URLWithString:[NSString stringWithFormat:@"https://picsum.photos/100/50/"]]);
 }
 
 @end

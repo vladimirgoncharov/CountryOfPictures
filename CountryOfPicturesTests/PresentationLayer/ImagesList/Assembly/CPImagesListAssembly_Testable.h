@@ -4,7 +4,6 @@
 @class CPImagesListInteractor;
 @class CPImagesListPresenter;
 @class CPImagesListRouter;
-@class CPImagesRepository;
 
 /**
  Extension makes private factory methods open for testing.
@@ -15,6 +14,5 @@
 - (CPImagesListPresenter *)presenterImagesList;
 - (CPImagesListInteractor *)interactorImagesList;
 - (CPImagesListRouter *)routerImagesList;
-- (CPImagesRepository *)imagesRepository;
 
 @end

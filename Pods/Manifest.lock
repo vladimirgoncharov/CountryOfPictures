@@ -1,45 +1,54 @@
 PODS:
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.9.0)
   - CHTCollectionViewWaterfallLayout (0.9.7):
     - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.7)
   - CHTCollectionViewWaterfallLayout/ObjC (0.9.7)
-  - OCMock (3.4.1)
-  - PromiseKit (4.5.0):
-    - PromiseKit/Foundation (= 4.5.0)
-    - PromiseKit/QuartzCore (= 4.5.0)
-    - PromiseKit/UIKit (= 4.5.0)
-  - PromiseKit/CorePromise (4.5.0)
-  - PromiseKit/Foundation (4.5.0):
-    - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (4.5.0):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (4.5.0):
-    - PromiseKit/CorePromise
-  - PureLayout (3.0.2)
+  - Masonry (1.1.0)
+  - OCMock (3.5)
+  - RamblerAppDelegateProxy (0.0.5)
   - RamblerTyphoonUtils/AssemblyCollector (1.5.0)
-  - SDWebImage (4.2.2):
-    - SDWebImage/Core (= 4.2.2)
-  - SDWebImage/Core (4.2.2)
+  - SDWebImage (5.5.2):
+    - SDWebImage/Core (= 5.5.2)
+  - SDWebImage/Core (5.5.2)
   - SVProgressHUD (2.2.2)
-  - Typhoon (4.0.3):
-    - Typhoon/DeallocNotifier (= 4.0.3)
-    - Typhoon/IntrospectionUtils (= 4.0.3)
-    - Typhoon/no-arc (= 4.0.3)
-  - Typhoon/DeallocNotifier (4.0.3)
-  - Typhoon/IntrospectionUtils (4.0.3)
-  - Typhoon/no-arc (4.0.3):
+  - Typhoon (4.0.8):
+    - Typhoon/DeallocNotifier (= 4.0.8)
+    - Typhoon/IntrospectionUtils (= 4.0.8)
+    - Typhoon/no-arc (= 4.0.8)
+  - Typhoon/DeallocNotifier (4.0.8)
+  - Typhoon/IntrospectionUtils (4.0.8)
+  - Typhoon/no-arc (4.0.8):
     - Typhoon/IntrospectionUtils
   - ViperMcFlurry (1.5.2)
 
 DEPENDENCIES:
-  - CHTCollectionViewWaterfallLayout (~> 0.9.7)
-  - OCMock (~> 3.4.1)
-  - PromiseKit (~> 4.4)
-  - PureLayout (~> 3.0.2)
-  - RamblerTyphoonUtils/AssemblyCollector (~> 1.5.0)
-  - SDWebImage (~> 4.0)
-  - SVProgressHUD (~> 2.2.2)
-  - Typhoon (~> 4.0.3)
+  - Bolts (= 1.9.0)
+  - CHTCollectionViewWaterfallLayout (= 0.9.7)
+  - Masonry (= 1.1.0)
+  - OCMock (= 3.5)
+  - RamblerAppDelegateProxy (= 0.0.5)
+  - RamblerTyphoonUtils/AssemblyCollector (= 1.5.0)
+  - SDWebImage (= 5.5.2)
+  - SVProgressHUD (= 2.2.2)
+  - Typhoon (= 4.0.8)
   - ViperMcFlurry (from `https://github.com/rambler-digital-solutions/ViperMcFlurry.git`, tag `1.5.2`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Bolts
+    - CHTCollectionViewWaterfallLayout
+    - Masonry
+    - OCMock
+    - RamblerAppDelegateProxy
+    - RamblerTyphoonUtils
+    - SDWebImage
+    - SVProgressHUD
+    - Typhoon
 
 EXTERNAL SOURCES:
   ViperMcFlurry:
@@ -52,16 +61,17 @@ CHECKOUT OPTIONS:
     :tag: 1.5.2
 
 SPEC CHECKSUMS:
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   CHTCollectionViewWaterfallLayout: 9d11068fafecac106695bb5a5d6d0f738483b598
-  OCMock: 2cd0716969bab32a2283ff3a46fd26a8c8b4c5e3
-  PromiseKit: 9c1d9f6d7b65e3951a90bea7f407c56972be5d8e
-  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  OCMock: 4ab4577fc941af31f4a0398f6e7e230cf21fc72a
+  RamblerAppDelegateProxy: 9e90d7bd1406865918538b4c720fa0977b848a1b
   RamblerTyphoonUtils: 08a6b5592e045a490cd4550aa9ea4a581308d482
-  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+  SDWebImage: 4d5c027c935438f341ed33dbac53ff9f479922ca
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
-  Typhoon: 85d1a7ada9a7def46a374be1301540572cc53636
+  Typhoon: f8901ef1ad0e2fa520cda0f668492dd33353f7dc
   ViperMcFlurry: 701bc3ad8d188b1f1e157ec0ddf4e77184de88b5
 
-PODFILE CHECKSUM: fc6108cbaf248be307fe148d0070d743e9cff17d
+PODFILE CHECKSUM: 02d9866a90f7f9768231e9710e875c8620584271
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.8.4

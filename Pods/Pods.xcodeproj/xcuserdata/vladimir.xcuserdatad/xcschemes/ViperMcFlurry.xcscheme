@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '0EF8F0542C29CA5ADEDD7AAB34D01AFD'
-               BlueprintName = 'ViperMcFlurry'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'ViperMcFlurry.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "268C31B482B7D9D21C6402BFB26E1EDE"
+               BuildableName = "ViperMcFlurry.framework"
+               BlueprintName = "ViperMcFlurry"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

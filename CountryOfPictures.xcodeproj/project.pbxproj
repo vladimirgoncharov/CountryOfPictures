@@ -15,17 +15,23 @@
 		9E05B2E418CD7C1A6BEB325F /* Pods_CountryOfPictures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DEDEAAB7D312A332FDD6C58 /* Pods_CountryOfPictures.framework */; };
 		ACECECB8AF5896B51E561E3D /* Pods_CountryOfPicturesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876D00828A1A35D706059016 /* Pods_CountryOfPicturesTests.framework */; };
 		BB574EE1F9EC5DAE856FF2FB /* CPImagesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F6F22161529259987A7D0A /* CPImagesListViewController.m */; };
-		E70689CE1FB85349002C25E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E70689CD1FB85349002C25E1 /* AppDelegate.m */; };
-		E70689D41FB85349002C25E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E70689D21FB85349002C25E1 /* Main.storyboard */; };
+		E70689CE1FB85349002C25E1 /* CPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E70689CD1FB85349002C25E1 /* CPAppDelegate.m */; };
 		E70689D61FB85349002C25E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E70689D51FB85349002C25E1 /* Assets.xcassets */; };
 		E70689D91FB85349002C25E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E70689D71FB85349002C25E1 /* LaunchScreen.storyboard */; };
 		E70689DC1FB85349002C25E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E70689DB1FB85349002C25E1 /* main.m */; };
 		E7068A071FB87447002C25E1 /* CPImagesRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = E7068A061FB87447002C25E1 /* CPImagesRepository.m */; };
 		E7068A0B1FB874A9002C25E1 /* CPImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E7068A0A1FB874A9002C25E1 /* CPImage.m */; };
 		E707F1701FB911F1008C4B45 /* CPImagesRepositoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E707F16F1FB911F1008C4B45 /* CPImagesRepositoryTests.m */; };
+		E72130D323FB3FE7009549CE /* CPAppRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = E72130D223FB3FE7009549CE /* CPAppRouter.m */; };
+		E72130D823FB4392009549CE /* CPThirdPartiesConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = E72130D723FB4392009549CE /* CPThirdPartiesConfigurator.m */; };
+		E72130DD23FB4505009549CE /* CPAppAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = E72130DC23FB4505009549CE /* CPAppAssembly.m */; };
+		E72130E223FB4884009549CE /* CPTestsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E72130E123FB4884009549CE /* CPTestsAppDelegate.m */; };
+		E72130E523FB4D15009549CE /* CPBusinessAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = E72130E423FB4D15009549CE /* CPBusinessAssembly.m */; };
+		E72130EA23FB4ECE009549CE /* CPImagesListAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E72130E923FB4ECE009549CE /* CPImagesListAssemblyTests.m */; };
+		E72130ED23FB51B1009549CE /* CPTyphoonAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E72130EC23FB51B1009549CE /* CPTyphoonAppDelegate.m */; };
 		E7676A2F1FB9AD0200D4C634 /* CPImageCollectionCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E7676A2E1FB9AD0200D4C634 /* CPImageCollectionCellTests.m */; };
 		E7676A351FBA021C00D4C634 /* CPImagesListModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E7676A341FBA021C00D4C634 /* CPImagesListModule.m */; };
-		E76B32A41FB9270A0078F459 /* CPImagesListAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD5790DDB6B8A08AD39186 /* CPImagesListAssemblyTests.m */; };
+		E76B32A41FB9270A0078F459 /* CPBusinessAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD5790DDB6B8A08AD39186 /* CPBusinessAssemblyTests.m */; };
 		E76B32BE1FB991D20078F459 /* RamblerTyphoonAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E76B32B81FB991D20078F459 /* RamblerTyphoonAssemblyTests.m */; };
 		E76B32BF1FB991D20078F459 /* RamblerTyphoonAssemblyTestsTypeDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = E76B32BA1FB991D20078F459 /* RamblerTyphoonAssemblyTestsTypeDescriptor.m */; };
 		E76B32C01FB991D20078F459 /* RamblerTyphoonAssemblyTestUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E76B32BC1FB991D20078F459 /* RamblerTyphoonAssemblyTestUtilities.m */; };
@@ -72,7 +78,7 @@
 		80F6F22161529259987A7D0A /* CPImagesListViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CPImagesListViewController.m; sourceTree = "<group>"; };
 		82F6BBE4FFA5CAAC3A6D12F2 /* CPImagesListInteractor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CPImagesListInteractor.m; sourceTree = "<group>"; };
 		876D00828A1A35D706059016 /* Pods_CountryOfPicturesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountryOfPicturesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8EAD5790DDB6B8A08AD39186 /* CPImagesListAssemblyTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CPImagesListAssemblyTests.m; sourceTree = "<group>"; };
+		8EAD5790DDB6B8A08AD39186 /* CPBusinessAssemblyTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CPBusinessAssemblyTests.m; sourceTree = "<group>"; };
 		96CE92B2FA31D84762ED24E6 /* CPImagesListViewInput.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CPImagesListViewInput.h; sourceTree = "<group>"; };
 		B328A1FA294C373C5784B04A /* CPImagesListRouterTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CPImagesListRouterTests.m; sourceTree = "<group>"; };
 		CDABBF7C58CA886571CD6B86 /* CPImagesListRouter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CPImagesListRouter.m; sourceTree = "<group>"; };
@@ -81,9 +87,8 @@
 		D92A206919EC5AC73F1BA6AA /* CPImagesListAssembly.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CPImagesListAssembly.h; sourceTree = "<group>"; };
 		E1A0DF322DA4469E6FCE9BED /* CPImagesListPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CPImagesListPresenter.m; sourceTree = "<group>"; };
 		E70689C91FB85349002C25E1 /* CountryOfPictures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountryOfPictures.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E70689CC1FB85349002C25E1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E70689CD1FB85349002C25E1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E70689D31FB85349002C25E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E70689CC1FB85349002C25E1 /* CPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPAppDelegate.h; sourceTree = "<group>"; };
+		E70689CD1FB85349002C25E1 /* CPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPAppDelegate.m; sourceTree = "<group>"; };
 		E70689D51FB85349002C25E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E70689D81FB85349002C25E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E70689DA1FB85349002C25E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,6 +102,23 @@
 		E7068A091FB874A9002C25E1 /* CPImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPImage.h; sourceTree = "<group>"; };
 		E7068A0A1FB874A9002C25E1 /* CPImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPImage.m; sourceTree = "<group>"; };
 		E707F16F1FB911F1008C4B45 /* CPImagesRepositoryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPImagesRepositoryTests.m; sourceTree = "<group>"; };
+		E72130CF23FB18A7009549CE /* CPImageExternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPImageExternal.h; sourceTree = "<group>"; };
+		E72130D123FB3FE7009549CE /* CPAppRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPAppRouter.h; sourceTree = "<group>"; };
+		E72130D223FB3FE7009549CE /* CPAppRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPAppRouter.m; sourceTree = "<group>"; };
+		E72130D623FB4392009549CE /* CPThirdPartiesConfigurator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPThirdPartiesConfigurator.h; sourceTree = "<group>"; };
+		E72130D723FB4392009549CE /* CPThirdPartiesConfigurator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPThirdPartiesConfigurator.m; sourceTree = "<group>"; };
+		E72130D923FB43A5009549CE /* CPThirdPartiesConfiguratorProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPThirdPartiesConfiguratorProtocol.h; sourceTree = "<group>"; };
+		E72130DB23FB4505009549CE /* CPAppAssembly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPAppAssembly.h; sourceTree = "<group>"; };
+		E72130DC23FB4505009549CE /* CPAppAssembly.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPAppAssembly.m; sourceTree = "<group>"; };
+		E72130E023FB4884009549CE /* CPTestsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTestsAppDelegate.h; sourceTree = "<group>"; };
+		E72130E123FB4884009549CE /* CPTestsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTestsAppDelegate.m; sourceTree = "<group>"; };
+		E72130E323FB4D15009549CE /* CPBusinessAssembly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPBusinessAssembly.h; sourceTree = "<group>"; };
+		E72130E423FB4D15009549CE /* CPBusinessAssembly.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPBusinessAssembly.m; sourceTree = "<group>"; };
+		E72130E823FB4ECE009549CE /* CPImagesListAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPImagesListAssembly_Testable.h; path = CountryOfPicturesTests/PresentationLayer/ImagesList/Assembly/CPImagesListAssembly_Testable.h; sourceTree = SOURCE_ROOT; };
+		E72130E923FB4ECE009549CE /* CPImagesListAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPImagesListAssemblyTests.m; path = CountryOfPicturesTests/BusinessLayer/CPImagesListAssemblyTests.m; sourceTree = SOURCE_ROOT; };
+		E72130EB23FB51B1009549CE /* CPTyphoonAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTyphoonAppDelegate.h; sourceTree = "<group>"; };
+		E72130EC23FB51B1009549CE /* CPTyphoonAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTyphoonAppDelegate.m; sourceTree = "<group>"; };
+		E72130EE23FB5386009549CE /* CPAppRouterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPAppRouterProtocol.h; sourceTree = "<group>"; };
 		E7676A2E1FB9AD0200D4C634 /* CPImageCollectionCellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPImageCollectionCellTests.m; sourceTree = "<group>"; };
 		E7676A301FB9C12400D4C634 /* CPImageCollectionCell_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPImageCollectionCell_Testable.h; sourceTree = "<group>"; };
 		E7676A321FB9E7A000D4C634 /* CPImagesListViewController_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPImagesListViewController_Testable.h; sourceTree = "<group>"; };
@@ -108,7 +130,7 @@
 		E76B32BB1FB991D20078F459 /* RamblerTyphoonAssemblyTestUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerTyphoonAssemblyTestUtilities.h; sourceTree = "<group>"; };
 		E76B32BC1FB991D20078F459 /* RamblerTyphoonAssemblyTestUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RamblerTyphoonAssemblyTestUtilities.m; sourceTree = "<group>"; };
 		E76B32BD1FB991D20078F459 /* AssemblyTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssemblyTesting.h; sourceTree = "<group>"; };
-		E76B32C51FB99A830078F459 /* CPImagesListAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPImagesListAssembly_Testable.h; sourceTree = "<group>"; };
+		E76B32C51FB99A830078F459 /* CPBusinessAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPBusinessAssembly_Testable.h; sourceTree = "<group>"; };
 		E77F13261FB88A7800308541 /* CPImageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPImageTests.m; sourceTree = "<group>"; };
 		E77F13301FB89A9500308541 /* CPImagesRepositoryProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPImagesRepositoryProtocol.h; sourceTree = "<group>"; };
 		E77F13331FB8AF0E00308541 /* CountryOfPictures.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountryOfPictures.pch; sourceTree = "<group>"; };
@@ -192,8 +214,8 @@
 		55AAD3E53D18FB280D9AED8B /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
-				8EAD5790DDB6B8A08AD39186 /* CPImagesListAssemblyTests.m */,
-				E76B32C51FB99A830078F459 /* CPImagesListAssembly_Testable.h */,
+				E72130E823FB4ECE009549CE /* CPImagesListAssembly_Testable.h */,
+				E72130E923FB4ECE009549CE /* CPImagesListAssemblyTests.m */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -314,7 +336,6 @@
 		E70689CB1FB85349002C25E1 /* CountryOfPictures */ = {
 			isa = PBXGroup;
 			children = (
-				E7068A011FB87000002C25E1 /* Storyboards */,
 				E70689FE1FB86FC2002C25E1 /* ApplicationLayer */,
 				E70689FF1FB86FCB002C25E1 /* PresentationLayer */,
 				E7068A001FB86FE1002C25E1 /* BusinessLayer */,
@@ -328,6 +349,7 @@
 		E70689E41FB85349002C25E1 /* CountryOfPicturesTests */ = {
 			isa = PBXGroup;
 			children = (
+				E72130DE23FB466F009549CE /* ApplicationLayer */,
 				E77F13281FB88A8E00308541 /* PresentationLayer */,
 				E707F16D1FB911D2008C4B45 /* BusinessLayer */,
 				E7676A2C1FB9ACD600D4C634 /* Views */,
@@ -349,7 +371,10 @@
 		E70689FE1FB86FC2002C25E1 /* ApplicationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				E77F132A1FB893FE00308541 /* AppDelegate */,
+				E72130DA23FB44DE009549CE /* Assemblies */,
+				E77F132A1FB893FE00308541 /* Delegates */,
+				E72130D523FB4372009549CE /* ThirdPartiesConfigurator */,
+				E72130D023FB3FC1009549CE /* Router */,
 			);
 			path = ApplicationLayer;
 			sourceTree = "<group>";
@@ -365,17 +390,10 @@
 		E7068A001FB86FE1002C25E1 /* BusinessLayer */ = {
 			isa = PBXGroup;
 			children = (
+				E72130E623FB4D7B009549CE /* Assembly */,
 				E7068A0D1FB874D4002C25E1 /* ImagesRepository */,
 			);
 			path = BusinessLayer;
-			sourceTree = "<group>";
-		};
-		E7068A011FB87000002C25E1 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				E70689D21FB85349002C25E1 /* Main.storyboard */,
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		E7068A021FB87018002C25E1 /* SupportingFiles */ = {
@@ -393,6 +411,7 @@
 		E7068A031FB87057002C25E1 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				E72130DF23FB485D009549CE /* TestsAppDelegate */,
 				E76B32B51FB991D20078F459 /* Testing */,
 				E70689E71FB85349002C25E1 /* Info.plist */,
 			);
@@ -428,6 +447,7 @@
 		E7068A0E1FB874F9002C25E1 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				E72130CF23FB18A7009549CE /* CPImageExternal.h */,
 				E7068A091FB874A9002C25E1 /* CPImage.h */,
 				E7068A0A1FB874A9002C25E1 /* CPImage.m */,
 			);
@@ -437,6 +457,7 @@
 		E707F16D1FB911D2008C4B45 /* BusinessLayer */ = {
 			isa = PBXGroup;
 			children = (
+				E72130E723FB4EAE009549CE /* Assembly */,
 				E707F16E1FB911DE008C4B45 /* ImagesRepository */,
 			);
 			path = BusinessLayer;
@@ -448,6 +469,69 @@
 				E707F16F1FB911F1008C4B45 /* CPImagesRepositoryTests.m */,
 			);
 			path = ImagesRepository;
+			sourceTree = "<group>";
+		};
+		E72130D023FB3FC1009549CE /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E72130EE23FB5386009549CE /* CPAppRouterProtocol.h */,
+				E72130D123FB3FE7009549CE /* CPAppRouter.h */,
+				E72130D223FB3FE7009549CE /* CPAppRouter.m */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E72130D523FB4372009549CE /* ThirdPartiesConfigurator */ = {
+			isa = PBXGroup;
+			children = (
+				E72130D923FB43A5009549CE /* CPThirdPartiesConfiguratorProtocol.h */,
+				E72130D623FB4392009549CE /* CPThirdPartiesConfigurator.h */,
+				E72130D723FB4392009549CE /* CPThirdPartiesConfigurator.m */,
+			);
+			path = ThirdPartiesConfigurator;
+			sourceTree = "<group>";
+		};
+		E72130DA23FB44DE009549CE /* Assemblies */ = {
+			isa = PBXGroup;
+			children = (
+				E72130DB23FB4505009549CE /* CPAppAssembly.h */,
+				E72130DC23FB4505009549CE /* CPAppAssembly.m */,
+			);
+			path = Assemblies;
+			sourceTree = "<group>";
+		};
+		E72130DE23FB466F009549CE /* ApplicationLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ApplicationLayer;
+			sourceTree = "<group>";
+		};
+		E72130DF23FB485D009549CE /* TestsAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				E72130E023FB4884009549CE /* CPTestsAppDelegate.h */,
+				E72130E123FB4884009549CE /* CPTestsAppDelegate.m */,
+			);
+			path = TestsAppDelegate;
+			sourceTree = "<group>";
+		};
+		E72130E623FB4D7B009549CE /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				E72130E323FB4D15009549CE /* CPBusinessAssembly.h */,
+				E72130E423FB4D15009549CE /* CPBusinessAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		E72130E723FB4EAE009549CE /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				8EAD5790DDB6B8A08AD39186 /* CPBusinessAssemblyTests.m */,
+				E76B32C51FB99A830078F459 /* CPBusinessAssembly_Testable.h */,
+			);
+			path = Assembly;
 			sourceTree = "<group>";
 		};
 		E7676A2C1FB9ACD600D4C634 /* Views */ = {
@@ -521,13 +605,15 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
-		E77F132A1FB893FE00308541 /* AppDelegate */ = {
+		E77F132A1FB893FE00308541 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				E70689CC1FB85349002C25E1 /* AppDelegate.h */,
-				E70689CD1FB85349002C25E1 /* AppDelegate.m */,
+				E72130EB23FB51B1009549CE /* CPTyphoonAppDelegate.h */,
+				E72130EC23FB51B1009549CE /* CPTyphoonAppDelegate.m */,
+				E70689CC1FB85349002C25E1 /* CPAppDelegate.h */,
+				E70689CD1FB85349002C25E1 /* CPAppDelegate.m */,
 			);
-			path = AppDelegate;
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		E77F13341FB8BC4300308541 /* Views */ = {
@@ -559,7 +645,6 @@
 				E70689C61FB85349002C25E1 /* Frameworks */,
 				E70689C71FB85349002C25E1 /* Resources */,
 				8EFB0659ED96B596812B46F6 /* [CP] Embed Pods Frameworks */,
-				33346E86EBAAC45E647E021A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -579,7 +664,6 @@
 				E70689DE1FB85349002C25E1 /* Frameworks */,
 				E70689DF1FB85349002C25E1 /* Resources */,
 				07FA97693FC652DE3409BF9D /* [CP] Embed Pods Frameworks */,
-				71C1C57C6B3467AAC3283415 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -600,7 +684,6 @@
 				E70689E91FB85349002C25E1 /* Frameworks */,
 				E70689EA1FB85349002C25E1 /* Resources */,
 				1D24C0EE9642E07A1ED13D59 /* [CP] Embed Pods Frameworks */,
-				989252812A427FAAB0E8547F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -664,7 +747,6 @@
 			files = (
 				E70689D91FB85349002C25E1 /* LaunchScreen.storyboard in Resources */,
 				E70689D61FB85349002C25E1 /* Assets.xcassets in Resources */,
-				E70689D41FB85349002C25E1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,10 +773,11 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CountryOfPicturesTests/Pods-CountryOfPicturesTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-CountryOfPicturesTests/Pods-CountryOfPicturesTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/RamblerAppDelegateProxy/RamblerAppDelegateProxy.framework",
 				"${BUILT_PRODUCTS_DIR}/RamblerTyphoonUtils/RamblerTyphoonUtils.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -704,9 +787,10 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHTCollectionViewWaterfallLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RamblerAppDelegateProxy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RamblerTyphoonUtils.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -716,7 +800,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CountryOfPicturesTests/Pods-CountryOfPicturesTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CountryOfPicturesTests/Pods-CountryOfPicturesTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		1B90109A1EEE453973B5F549 /* [CP] Check Pods Manifest.lock */ = {
@@ -743,10 +827,11 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CountryOfPicturesUITests/Pods-CountryOfPicturesUITests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-CountryOfPicturesUITests/Pods-CountryOfPicturesUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/RamblerAppDelegateProxy/RamblerAppDelegateProxy.framework",
 				"${BUILT_PRODUCTS_DIR}/RamblerTyphoonUtils/RamblerTyphoonUtils.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -755,9 +840,10 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHTCollectionViewWaterfallLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RamblerAppDelegateProxy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RamblerTyphoonUtils.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -766,22 +852,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CountryOfPicturesUITests/Pods-CountryOfPicturesUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		33346E86EBAAC45E647E021A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CountryOfPictures/Pods-CountryOfPictures-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CountryOfPicturesUITests/Pods-CountryOfPicturesUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6FBC6E356A29583F63093668 /* [CP] Check Pods Manifest.lock */ = {
@@ -802,31 +873,17 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		71C1C57C6B3467AAC3283415 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CountryOfPicturesTests/Pods-CountryOfPicturesTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8EFB0659ED96B596812B46F6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CountryOfPictures/Pods-CountryOfPictures-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-CountryOfPictures/Pods-CountryOfPictures-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/RamblerAppDelegateProxy/RamblerAppDelegateProxy.framework",
 				"${BUILT_PRODUCTS_DIR}/RamblerTyphoonUtils/RamblerTyphoonUtils.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -835,9 +892,10 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHTCollectionViewWaterfallLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RamblerAppDelegateProxy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RamblerTyphoonUtils.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -846,22 +904,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CountryOfPictures/Pods-CountryOfPictures-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		989252812A427FAAB0E8547F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CountryOfPicturesUITests/Pods-CountryOfPicturesUITests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CountryOfPictures/Pods-CountryOfPictures-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A7C8F5C53BA11C4D88B72312 /* [CP] Check Pods Manifest.lock */ = {
@@ -892,10 +935,15 @@
 				E70689DC1FB85349002C25E1 /* main.m in Sources */,
 				E7068A071FB87447002C25E1 /* CPImagesRepository.m in Sources */,
 				E77F13381FB8BC8D00308541 /* CPImageCollectionCell.m in Sources */,
+				E72130ED23FB51B1009549CE /* CPTyphoonAppDelegate.m in Sources */,
 				E7068A0B1FB874A9002C25E1 /* CPImage.m in Sources */,
-				E70689CE1FB85349002C25E1 /* AppDelegate.m in Sources */,
+				E72130E523FB4D15009549CE /* CPBusinessAssembly.m in Sources */,
+				E72130D823FB4392009549CE /* CPThirdPartiesConfigurator.m in Sources */,
+				E70689CE1FB85349002C25E1 /* CPAppDelegate.m in Sources */,
 				28767BD3BA15303327BE020E /* CPImagesListAssembly.m in Sources */,
 				BB574EE1F9EC5DAE856FF2FB /* CPImagesListViewController.m in Sources */,
+				E72130DD23FB4505009549CE /* CPAppAssembly.m in Sources */,
+				E72130D323FB3FE7009549CE /* CPAppRouter.m in Sources */,
 				3B2A43D368EC3524C2065EC8 /* CPImagesListPresenter.m in Sources */,
 				6F9FFACE49EDABB541B46CFE /* CPImagesListInteractor.m in Sources */,
 				9896172568EDD4A9717AF9CC /* CPImagesListRouter.m in Sources */,
@@ -907,6 +955,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E76B32C11FB992B50078F459 /* CPImagesListViewControllerTests.m in Sources */,
+				E72130E223FB4884009549CE /* CPTestsAppDelegate.m in Sources */,
 				E76B32C31FB992BE0078F459 /* CPImagesListInteractorTests.m in Sources */,
 				E707F1701FB911F1008C4B45 /* CPImagesRepositoryTests.m in Sources */,
 				E76B32BE1FB991D20078F459 /* RamblerTyphoonAssemblyTests.m in Sources */,
@@ -914,8 +963,9 @@
 				E77F13271FB88A7800308541 /* CPImageTests.m in Sources */,
 				E7676A2F1FB9AD0200D4C634 /* CPImageCollectionCellTests.m in Sources */,
 				E76B32BF1FB991D20078F459 /* RamblerTyphoonAssemblyTestsTypeDescriptor.m in Sources */,
+				E72130EA23FB4ECE009549CE /* CPImagesListAssemblyTests.m in Sources */,
 				E76B32C41FB992C30078F459 /* CPImagesListRouterTests.m in Sources */,
-				E76B32A41FB9270A0078F459 /* CPImagesListAssemblyTests.m in Sources */,
+				E76B32A41FB9270A0078F459 /* CPBusinessAssemblyTests.m in Sources */,
 				E76B32C21FB992BB0078F459 /* CPImagesListPresenterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -944,14 +994,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E70689D21FB85349002C25E1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E70689D31FB85349002C25E1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E70689D71FB85349002C25E1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

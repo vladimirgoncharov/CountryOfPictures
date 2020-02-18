@@ -1,6 +1,6 @@
 #import <XCTest/XCTest.h>
 
-#import <PromiseKit/PromiseKit.h>
+#import <Bolts/Bolts.h>
 #import "CPImagesRepository.h"
 #import "CPImage.h"
 
@@ -32,37 +32,27 @@
 - (void)testGetImagesListWithZeroCount {
     // given
     NSUInteger imagesCount = 0;
-    XCTestExpectation *expectation = [self expectationWithDescription:@"Getting zero images"];
     
     // when
-    AnyPromise *promise = [self.instance getImagesListWithCount:imagesCount];
+    BFTask<NSArray<id<CPImageExternal>> *> *promise = [self.instance getImagesListWithCount:imagesCount cts:nil];
+    [promise waitUntilFinished];
     
     // then
-    promise.then(^(NSMutableArray<CPImage *>* images) {
-        XCTAssertEqual(images.count,
-                       imagesCount);
-        [expectation fulfill];
-    });
-    [self waitForExpectationsWithTimeout:10
-                                 handler:nil];
+    XCTAssertEqual(promise.result.count,
+                   imagesCount);
 }
 
 - (void)testGetImagesListWithFiveCount {
     // given
     NSUInteger imagesCount = 5;
-    XCTestExpectation *expectation = [self expectationWithDescription:@"Getting five images"];
 
     // when
-    AnyPromise *promise = [self.instance getImagesListWithCount:imagesCount];
+    BFTask<NSArray<id<CPImageExternal>> *> *promise = [self.instance getImagesListWithCount:imagesCount cts:nil];
+    [promise waitUntilFinished];
 
     // then
-    promise.then(^(NSMutableArray<CPImage *>* images) {
-        XCTAssertEqual(images.count,
-                       imagesCount);
-        [expectation fulfill];
-    });
-    [self waitForExpectationsWithTimeout:10
-                                 handler:nil];
+    XCTAssertEqual(promise.result.count,
+                   imagesCount);
 }
 
 @end

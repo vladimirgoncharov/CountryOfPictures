@@ -8,6 +8,6 @@
 @property (nonatomic, weak, nullable) UICollectionView *collectionView;
 @property (nonatomic, weak, nullable) UIRefreshControl *pullToRefreshView;
 
-- (IBAction)refresh:(UIRefreshControl *)sender;
+- (IBAction)refresh:(nonnull UIRefreshControl *)sender;
 
 @end

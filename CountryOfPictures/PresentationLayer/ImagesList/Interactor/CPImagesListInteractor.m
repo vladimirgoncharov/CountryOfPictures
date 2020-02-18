@@ -1,14 +1,14 @@
 #import "CPImagesListInteractor.h"
 
-#import <PromiseKit/PromiseKit.h>
+#import <Bolts/Bolts.h>
 
 #import "CPImagesListInteractorOutput.h"
 #import "CPImagesRepositoryProtocol.h"
-#import "CPImage.h"
+#import "CPImageExternal.h"
 
 @interface CPImagesListInteractor()
 
-@property (nonatomic, strong) AnyPromise *imagesPromise;
+@property (nonatomic, strong) BFCancellationTokenSource *cts;
 
 @end
 
@@ -18,31 +18,25 @@
 
 - (void)fetchImages {
     // canceling current promise
-    if (self.imagesPromise) {
-        self.imagesPromise.then(^() {
-            @throw [NSError cancelledError];
-        });
+    if (self.cts) {
+        [self.cts cancel];
+        self.cts = nil;
     }
-
+    
     // running new load
     __weak typeof(self) wself = self;
-    self.imagesPromise = [self.imagesRepository getImagesListWithCount:51];
-    self.imagesPromise.then(^(NSMutableArray<CPImage *>* images) {
+    self.cts = [BFCancellationTokenSource new];
+    [[self.imagesRepository getImagesListWithCount:51 cts:self.cts] continueWithExecutor:[BFExecutor mainThreadExecutor] withBlock:^id _Nullable(BFTask<NSArray<id<CPImageExternal>> *> * _Nonnull t) {
         __strong typeof(wself) sself = wself;
         if (sself) {
-            [sself.output didFetchImagesSuccessful:images];
+            if (t.result) {
+                [sself.output didFetchImagesSuccessful:t.result];
+            } else if (t.error) {
+                [sself.output didFetchImagesFail:t.error];
+            }
         }
-    }).catch(^(NSError *error) {
-        __strong typeof(wself) sself = wself;
-        if (sself) {
-            [sself.output didFetchImagesFail:error];
-        }
-    }).always(^() {
-        __strong typeof(wself) sself = wself;
-        if (sself) {
-            sself.imagesPromise = nil;
-        }
-    });
+        return [BFTask taskWithResult:nil];
+    }];
 }
 
 @end

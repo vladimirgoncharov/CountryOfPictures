@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import <CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.h>
 
-@class CPImage;
+@protocol CPImageExternal;
 
 /**
  Basic requirements for View of ImagesList module.
@@ -15,16 +15,16 @@
 
 /**
  The list of displayed images.
-
+ 
  @return The images list.
  */
-- (NSArray<CPImage *>*)images;
+- (NSArray<id<CPImageExternal>> *)images;
 /**
  Replace and reload the current list of the images.
-
+ 
  @param images The images list.
  */
-- (void)reloadImages:(NSArray<CPImage *>*)images;
+- (void)reloadImages:(NSArray<id<CPImageExternal>> *)images;
 
 /**
  Displaying the progress view that notifies you when data is loading.
@@ -38,7 +38,7 @@
 /**
  Displays a view with a description of the error.
  If the error is cancelled operation then the error will not be displayed.
-
+ 
  @param error The error of any action. Displays the alert message like - [NSError localizedDescription].
  */
 - (void)showError:(NSError *)error;

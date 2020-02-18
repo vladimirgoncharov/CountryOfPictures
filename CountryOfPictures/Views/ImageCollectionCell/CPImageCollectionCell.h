@@ -7,7 +7,7 @@
 
 /**
  Starts downloading a new image. The old download is interrupted.
-
+ 
  @param url The image url.
  */
 - (void)loadImageByURL:(NSURL *)url;

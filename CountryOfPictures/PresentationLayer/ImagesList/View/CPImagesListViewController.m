@@ -2,19 +2,18 @@
 
 #import "CPImagesListViewOutput.h"
 #import "CPImageCollectionCell.h"
-#import "CPImage.h"
+#import "CPImageExternal.h"
 
 #import <SVProgressHUD/SVProgressHUD.h>
-#import <PureLayout/PureLayout.h>
-#import <PromiseKit/PromiseKit.h>
+#import <Masonry/Masonry.h>
+#import <Bolts/Bolts.h>
 
-static NSString *ImageCellId = @"CPImageCollectionCell";
+static NSString *kImageCellId = @"CPImageCollectionCell";
 
 @interface CPImagesListViewController()
 
 @property (nonatomic, weak, nullable) UICollectionView *collectionView;
 @property (nonatomic, weak, nullable) UIRefreshControl *pullToRefreshView;
-@property (nonatomic, assign) BOOL didSetupConstraints;
 
 @end
 
@@ -24,28 +23,27 @@ static NSString *ImageCellId = @"CPImageCollectionCell";
 
 - (void)loadView {
     [super loadView];
-
+    
     UICollectionView *collectionView = [self createCollectionView];
     [self.view addSubview:collectionView];
     self.collectionView = collectionView;
-
+    
     UIRefreshControl *pullToRefreshView = [self createPullToRefreshView];
     [collectionView addSubview:pullToRefreshView];
     self.pullToRefreshView = pullToRefreshView;
 }
 
 - (void)viewDidLoad {
-	[super viewDidLoad];
-	[self.output didTriggerViewReadyEvent];
+    [super viewDidLoad];
+    [self.output didTriggerViewReadyEvent];
 }
 
 #pragma mark - Layout constraints
 
 - (void)updateViewConstraints {
-    if (!self.didSetupConstraints) {
-        [self.collectionView autoPinEdgesToSuperviewEdges];
-        self.didSetupConstraints = YES;
-    }
+    [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
     [super updateViewConstraints];
 }
 
@@ -88,14 +86,14 @@ static NSString *ImageCellId = @"CPImageCollectionCell";
 - (void)setupInitialState {
     self.collectionView.backgroundColor = [UIColor blackColor];
     [self.collectionView registerClass:[CPImageCollectionCell class]
-            forCellWithReuseIdentifier:ImageCellId];
+            forCellWithReuseIdentifier:kImageCellId];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
     self.navigationItem.title = @"Images";
 }
 
-- (void)reloadImages:(NSArray<CPImage *> *)images {
+- (void)reloadImages:(NSArray<id<CPImageExternal>> *)images {
     _images = images;
     [self.collectionView reloadData];
 }
@@ -109,17 +107,15 @@ static NSString *ImageCellId = @"CPImageCollectionCell";
 }
 
 - (void)showError:(NSError *)error {
-    if (!error.isCancelled) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
-                                                                       message:[error localizedDescription]
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"OK"
-                                                  style:UIAlertActionStyleCancel
-                                                handler:nil]];
-        [self presentViewController:alert
-                           animated:YES
-                         completion:nil];
-    }
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                   message:[error localizedDescription]
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK"
+                                              style:UIAlertActionStyleCancel
+                                            handler:nil]];
+    [self presentViewController:alert
+                       animated:YES
+                     completion:nil];
 }
 
 - (void)dismissPullToRefreshView {
@@ -137,17 +133,9 @@ static NSString *ImageCellId = @"CPImageCollectionCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CPImageCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ImageCellId
+    CPImageCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kImageCellId
                                                                             forIndexPath:indexPath];
-    [self updateCell:cell
-         atIndexPath:indexPath];
     return cell;
-}
-
-- (void)updateCell:(CPImageCollectionCell *)cell
-       atIndexPath:(NSIndexPath *)indexPath {
-    CPImage *image = [self.images objectAtIndex:indexPath.row];
-    [cell loadImageByURL:[image url]];
 }
 
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout
@@ -155,9 +143,17 @@ static NSString *ImageCellId = @"CPImageCollectionCell";
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CPImage *image = [self.images objectAtIndex:indexPath.row];
+    id<CPImageExternal> image = [self.images objectAtIndex:indexPath.row];
     return CGSizeMake(image.width,
                       image.height);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView
+       willDisplayCell:(UICollectionViewCell *)cell
+    forItemAtIndexPath:(NSIndexPath *)indexPath {
+    CPImageCollectionCell *imageCell = (CPImageCollectionCell *)cell;
+    id<CPImageExternal> image = [self.images objectAtIndex:indexPath.row];
+    [imageCell loadImageByURL:[image url]];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView
